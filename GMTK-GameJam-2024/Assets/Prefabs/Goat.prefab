@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 757427222755739950}
   m_Layer: 0
   m_Name: Goat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,6 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca73e5720199d34409c14bbb36bd7b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGrounded: 1
+  horizontalSpeed: 0
+  verticalAcceleration: 0
 --- !u!50 &757427222755739950
 Rigidbody2D:
   serializedVersion: 4
