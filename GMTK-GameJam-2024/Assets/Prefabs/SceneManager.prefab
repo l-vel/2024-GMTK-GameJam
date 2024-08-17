@@ -47,5 +47,8 @@ MonoBehaviour:
   groundHeight: 0
   levelHeight: 0
   levelWidth: 0
-  platformPrefab: {fileID: 0}
   heightDiff: 0
+  dandelionProb: 0
+  dandelionHeightDiff: 0
+  platformPrefab: {fileID: 0}
+  dandelionPrefab: {fileID: 6257112981563962411, guid: 2259182481f020d4886140db639f3c0d, type: 3}
