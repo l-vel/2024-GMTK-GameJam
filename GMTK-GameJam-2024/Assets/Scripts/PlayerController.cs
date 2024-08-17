@@ -4,15 +4,54 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool isGrounded = false;
+    public float horizontalSpeed;
+    public float verticalAcceleration;
+
+    Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        HorizontalMovement();
+        Jump();
+    }
+
+    void HorizontalMovement() {
+        Vector3 pos = gameObject.transform.position;
+
+        if (Input.GetKey(KeyCode.LeftArrow)) {
+            pos += Vector3.left*horizontalSpeed;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow)) {
+            pos += Vector3.right*horizontalSpeed;
+        }
         
+        gameObject.transform.position = pos;
+    }
+
+    void Jump() {
+        if (Input.GetKey(KeyCode.Space) && isGrounded && rb.velocity == new Vector2(0, 0)) {
+            rb.AddForce(new Vector2(0, verticalAcceleration), ForceMode2D.Impulse);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Platform")) {
+            isGrounded = true;
+            rb.velocity = new Vector2(0, 0);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Platform")) {
+            isGrounded = false;
+        }
     }
 }
