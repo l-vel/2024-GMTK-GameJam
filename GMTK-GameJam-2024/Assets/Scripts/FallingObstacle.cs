@@ -9,13 +9,13 @@ public class FallingObstacle : MonoBehaviour
     public float distance;
     bool isFalling = false;
 
-    private void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
-    private void Update()
+    void Update()
     {
         Physics2D.queriesStartInColliders = false;
 
@@ -37,7 +37,7 @@ public class FallingObstacle : MonoBehaviour
     }
 
     // removes obstacle after it touches player
-    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
