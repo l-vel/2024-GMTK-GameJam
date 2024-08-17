@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Platform")) {
             isGrounded = true;
-            rb.velocity = new Vector2(0, 0);
         }
     }
 
