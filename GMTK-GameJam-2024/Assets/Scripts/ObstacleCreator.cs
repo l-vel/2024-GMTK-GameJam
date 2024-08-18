@@ -8,13 +8,9 @@ public class ObstacleCreator : MonoBehaviour
     public float levelHeight;
     public float levelWidth;
     public float heightDiff;
-
-    public float dandelionProb;
-    public float dandelionHeightDiff;
     
     public GameObject platformPrefab;
     public GameObject obstaclePrefab;
-    public float heightDiff;
 
     public int avgNumObstacles;
 
@@ -61,13 +57,6 @@ public class ObstacleCreator : MonoBehaviour
                                            platformPos.x + platformWidth/2 - obstacleWidth/2);
             Vector3 obstaclePos = new Vector3(obstacleX, obstacleY, 0);
             Instantiate(obstaclePrefab, obstaclePos, Quaternion.identity);
-
-    void makeDandelion(Vector3 platformPos) {
-        float isDandelion = Random.Range(0f, 1f);
-
-        if (isDandelion <= dandelionProb) {
-            Vector3 dandelionPos = platformPos + Vector3.up*dandelionHeightDiff;
-            Instantiate(dandelionPrefab, dandelionPos, Quaternion.identity);
         }
     }
 }
