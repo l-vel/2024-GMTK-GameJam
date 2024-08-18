@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class FallingObstacle : MonoBehaviour
 {
+    public HeartManager heartManager;
+
     Rigidbody2D rb;
     BoxCollider2D boxCollider2D;
     public float distance;
@@ -42,8 +44,8 @@ public class FallingObstacle : MonoBehaviour
         // if object touches player, removes player and restarts the game level after a couple seconds
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
-            Invoke(nameof(RestartLevel), 0.5f);
+            heartManager.removeHeart();
+            Destroy(gameObject);
         }
 
         // otherwise, the obstacle remains on the ground
@@ -51,10 +53,5 @@ public class FallingObstacle : MonoBehaviour
         // {
         //     rb.gravityScale = 0;
         // }
-    }
-
-    void RestartLevel()
-    {
-        SceneManager.LoadScene("Test Scene");
     }
 }

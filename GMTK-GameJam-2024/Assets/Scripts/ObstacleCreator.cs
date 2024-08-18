@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObstacleCreator : MonoBehaviour
 {
+    public HeartManager heartManager;
+
     public float groundHeight;
     public float levelHeight;
     public float levelWidth;
@@ -58,7 +60,9 @@ public class ObstacleCreator : MonoBehaviour
             float obstacleX = Random.Range(platformPos.x - platformWidth/2 + obstacleWidth/2,
                                            platformPos.x + platformWidth/2 - obstacleWidth/2);
             Vector3 obstaclePos = new Vector3(obstacleX, obstacleY, 0);
-            Instantiate(obstaclePrefab, obstaclePos, Quaternion.identity);
+            GameObject obstacle = (GameObject)Instantiate(obstaclePrefab, obstaclePos, Quaternion.identity);
+            FallingObstacle script = obstacle.GetComponent<FallingObstacle>();
+            script.heartManager = heartManager;
         }
     }
 
