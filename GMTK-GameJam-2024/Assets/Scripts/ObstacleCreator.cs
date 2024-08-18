@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObstacleCreator : MonoBehaviour
 {
+    public HeartManager heartManager;
+
     public float groundHeight;
     public float levelHeight;
     public float levelWidth;
@@ -11,8 +13,10 @@ public class ObstacleCreator : MonoBehaviour
 
     public GameObject platformPrefab;
     public GameObject obstaclePrefab;
+    public GameObject dandelionPrefab;
 
     public int avgNumObstacles;
+    public float dandelionProb;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,7 @@ public class ObstacleCreator : MonoBehaviour
             Instantiate(platformPrefab, pos, Quaternion.identity);
 
             makeObstacles(pos);
+            makeDandelion(pos);
 
             currHeight += heightDiff;
         }
@@ -55,7 +60,22 @@ public class ObstacleCreator : MonoBehaviour
             float obstacleX = Random.Range(platformPos.x - platformWidth/2 + obstacleWidth/2,
                                            platformPos.x + platformWidth/2 - obstacleWidth/2);
             Vector3 obstaclePos = new Vector3(obstacleX, obstacleY, 0);
-            Instantiate(obstaclePrefab, obstaclePos, Quaternion.identity);
+            GameObject obstacle = (GameObject)Instantiate(obstaclePrefab, obstaclePos, Quaternion.identity);
+            FallingObstacle script = obstacle.GetComponent<FallingObstacle>();
+            script.heartManager = heartManager;
+        }
+    }
+
+    void makeDandelion(Vector3 platformPos) {
+        bool makeDandelion = Random.Range(0f, 1f) <= dandelionProb;
+
+        if (makeDandelion) {
+            float platformHeight = platformPrefab.GetComponent<BoxCollider2D>().size.y;
+            float dandelionHeight = dandelionPrefab.GetComponent<BoxCollider2D>().size.y;
+
+            float dandelionY = platformPos.y + platformHeight/2 + dandelionHeight/2;
+            Vector3 dandelionPos = new Vector3(platformPos.x, dandelionY, 0);
+            Instantiate(dandelionPrefab, dandelionPos, Quaternion.identity);
         }
     }
 
