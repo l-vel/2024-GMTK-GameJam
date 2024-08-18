@@ -6,7 +6,8 @@ using TMPro;
 public class TextFadeIn : MonoBehaviour
 {
     TMP_Text text;
-
+    public float secsTillStart;
+    float timePassed = 0;
     // Start is called before the first frame update
     void Start()
     { 
@@ -17,6 +18,9 @@ public class TextFadeIn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + Time.deltaTime/2);
+        timePassed += Time.deltaTime;
+        if (timePassed >= secsTillStart) {
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + Time.deltaTime/2);
+        }
     }
 }

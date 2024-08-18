@@ -30,8 +30,6 @@ public class HeartManager : MonoBehaviour
         if (numHeartsActive == 0) {
             Destroy(goat.gameObject);
             Invoke("gameOver", 0.75f);
-            
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
