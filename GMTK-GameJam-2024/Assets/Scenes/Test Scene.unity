@@ -509,9 +509,17 @@ PrefabInstance:
       value: -1.73
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
+      propertyPath: dandelionProb
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: platformPrefab
       value: 
       objectReference: {fileID: 3945111258921212632, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
+    - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
+      propertyPath: dandelionHeightDiff
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5898542196880666628, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
