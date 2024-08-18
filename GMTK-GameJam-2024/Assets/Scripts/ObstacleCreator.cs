@@ -8,7 +8,7 @@ public class ObstacleCreator : MonoBehaviour
     public float levelHeight;
     public float levelWidth;
     public float heightDiff;
-    
+
     public GameObject platformPrefab;
     public GameObject obstaclePrefab;
 
@@ -30,13 +30,9 @@ public class ObstacleCreator : MonoBehaviour
             float currX = Random.Range(levelLeft, levelRight);
             Vector3 pos = new Vector3(currX, currHeight, 0);
             Instantiate(platformPrefab, pos, Quaternion.identity);
-            
-            makeObstacles(pos);
-
             currHeight += heightDiff;
         }
     }
-
 
     void makeObstacles(Vector3 platformPos) 
     {
@@ -59,4 +55,4 @@ public class ObstacleCreator : MonoBehaviour
             Instantiate(obstaclePrefab, obstaclePos, Quaternion.identity);
         }
     }
-}
+

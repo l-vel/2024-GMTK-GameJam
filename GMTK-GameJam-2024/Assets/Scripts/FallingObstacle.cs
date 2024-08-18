@@ -12,7 +12,7 @@ public class FallingObstacle : MonoBehaviour
 
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
@@ -46,11 +46,11 @@ public class FallingObstacle : MonoBehaviour
             Invoke(nameof(RestartLevel), 0.5f);
         }
 
-        // // otherwise, the obstacle remains on the ground
-        // else
-        // {
-        //     rb.gravityScale = 0;
-        // }
+        // otherwise, the obstacle remains on the ground
+        else
+        {
+            rb.gravityScale = 0;
+        }
     }
 
     void RestartLevel()
