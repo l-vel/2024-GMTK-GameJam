@@ -47,10 +47,10 @@ public class FallingObstacle : MonoBehaviour
         }
 
         // otherwise, the obstacle remains on the ground
-        else
-        {
-            rb.gravityScale = 0;
-        }
+        // else
+        // {
+        //     rb.gravityScale = 0;
+        // }
     }
 
     void RestartLevel()

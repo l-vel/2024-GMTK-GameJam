@@ -30,6 +30,9 @@ public class ObstacleCreator : MonoBehaviour
             float currX = Random.Range(levelLeft, levelRight);
             Vector3 pos = new Vector3(currX, currHeight, 0);
             Instantiate(platformPrefab, pos, Quaternion.identity);
+
+            makeObstacles(pos);
+
             currHeight += heightDiff;
         }
     }
@@ -56,3 +59,4 @@ public class ObstacleCreator : MonoBehaviour
         }
     }
 
+}
