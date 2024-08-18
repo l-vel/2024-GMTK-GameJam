@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class HeartManager : MonoBehaviour
 {
+    public GameObject gameOverUIPrefab;
+
     List<GameObject> hearts = new List<GameObject>();
     int numHeartsActive;
 
@@ -20,11 +22,16 @@ public class HeartManager : MonoBehaviour
         numHeartsActive = 3;
     }
 
-    public void removeHeart() {
-        hearts[--numHeartsActive].SetActive(false);
+    public void removeHeart(Collision2D goat) {
+        if (numHeartsActive > 0) {
+            hearts[--numHeartsActive].SetActive(false);
+        }
 
         if (numHeartsActive == 0) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Destroy(goat.gameObject);
+            Invoke("gameOver", 0.75f);
+            
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -32,5 +39,9 @@ public class HeartManager : MonoBehaviour
         if (numHeartsActive < MAX_NUM_HEARTS) {
             hearts[numHeartsActive++].SetActive(true);
         }
+    }
+
+    public void gameOver() {
+        Instantiate(gameOverUIPrefab);
     }
 }

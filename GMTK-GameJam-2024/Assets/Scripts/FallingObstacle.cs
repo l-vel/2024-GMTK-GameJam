@@ -44,7 +44,7 @@ public class FallingObstacle : MonoBehaviour
         // if object touches player, removes player and restarts the game level after a couple seconds
         if (collision.gameObject.CompareTag("Player"))
         {
-            heartManager.removeHeart();
+            heartManager.removeHeart(collision);
             Destroy(gameObject);
         }
 
