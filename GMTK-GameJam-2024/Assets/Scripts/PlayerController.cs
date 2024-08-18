@@ -23,33 +23,42 @@ public class PlayerController : MonoBehaviour
         Jump();
     }
 
-    void HorizontalMovement() {
+    void HorizontalMovement()
+    {
         Vector3 pos = gameObject.transform.position;
 
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            pos += Vector3.left*horizontalSpeed;
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            pos += Vector3.left * horizontalSpeed;
         }
-        else if (Input.GetKey(KeyCode.RightArrow)) {
-            pos += Vector3.right*horizontalSpeed;
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            pos += Vector3.right * horizontalSpeed;
         }
-        
+
         gameObject.transform.position = pos;
     }
 
-    void Jump() {
-        if (Input.GetKey(KeyCode.Space) && isGrounded && rb.velocity == new Vector2(0, 0)) {
+    void Jump()
+    {
+        if (Input.GetKey(KeyCode.Space) && isGrounded && rb.velocity == new Vector2(0, 0))
+        {
             rb.AddForce(new Vector2(0, verticalAcceleration), ForceMode2D.Impulse);
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Platform")) {
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
             isGrounded = true;
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Platform")) {
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
             isGrounded = false;
         }
     }
