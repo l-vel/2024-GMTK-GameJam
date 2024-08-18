@@ -13,7 +13,10 @@ public class ObstacleCreator : MonoBehaviour
     public float dandelionHeightDiff;
     
     public GameObject platformPrefab;
-    public GameObject dandelionPrefab;
+    public GameObject obstaclePrefab;
+    public float heightDiff;
+
+    public int avgNumObstacles;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +34,33 @@ public class ObstacleCreator : MonoBehaviour
             float currX = Random.Range(levelLeft, levelRight);
             Vector3 pos = new Vector3(currX, currHeight, 0);
             Instantiate(platformPrefab, pos, Quaternion.identity);
-
-            makeDandelion(pos);
+            
+            makeObstacles(pos);
 
             currHeight += heightDiff;
         }
     }
+
+
+    void makeObstacles(Vector3 platformPos) 
+    {
+        int numObstacles = Random.Range(avgNumObstacles-2, avgNumObstacles+2);
+
+        Vector2 platformSize = platformPrefab.GetComponent<BoxCollider2D>().size;
+        float platformWidth = platformSize.x;
+        float platformHeight = platformSize.y;
+
+        Vector2 obstacleSize = obstaclePrefab.GetComponent<BoxCollider2D>().size;
+        float obstacleWidth = obstacleSize.x;
+        float obstacleHeight = obstacleSize.y;
+
+        float obstacleY = platformPos.y - platformHeight/2 - obstacleHeight/2;
+
+        for (int i = 0; i < numObstacles; i++) {
+            float obstacleX = Random.Range(platformPos.x - platformWidth/2 + obstacleWidth/2,
+                                           platformPos.x + platformWidth/2 - obstacleWidth/2);
+            Vector3 obstaclePos = new Vector3(obstacleX, obstacleY, 0);
+            Instantiate(obstaclePrefab, obstaclePos, Quaternion.identity);
 
     void makeDandelion(Vector3 platformPos) {
         float isDandelion = Random.Range(0f, 1f);
