@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -14,5 +14,13 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "LevelExit" )
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }
