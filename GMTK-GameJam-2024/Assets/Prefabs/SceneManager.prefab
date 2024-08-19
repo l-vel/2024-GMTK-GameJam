@@ -48,7 +48,8 @@ MonoBehaviour:
   levelHeight: 0
   levelWidth: 0
   heightDiff: 0
-  dandelionProb: 0
-  dandelionHeightDiff: 0
   platformPrefab: {fileID: 0}
+  obstaclePrefab: {fileID: 598166557933991564, guid: 565c1028f4eeff4408869d5b7dce1f5e, type: 3}
   dandelionPrefab: {fileID: 6257112981563962411, guid: 2259182481f020d4886140db639f3c0d, type: 3}
+  avgNumObstacles: 0
+  dandelionProb: 0
