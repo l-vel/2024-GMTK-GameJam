@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
+
+    private int sceneIndex;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sceneIndex = 0;
     }
 
     // Update is called once per frame
@@ -18,9 +20,10 @@ public class LevelManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "LevelExit" )
+        if(other.tag == "Finish" )
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(sceneIndex);
+            sceneIndex++;
         }
     }
 }
