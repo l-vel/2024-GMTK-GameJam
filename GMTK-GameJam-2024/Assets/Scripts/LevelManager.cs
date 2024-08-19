@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviour
         if(other.tag == "Finish" )
         {
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+            GameObject.DontDestroyOnLoad(this.gameObject);
             
         }
     }
