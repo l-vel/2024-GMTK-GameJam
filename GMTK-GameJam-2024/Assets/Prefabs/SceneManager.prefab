@@ -44,8 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9554ca227636c946957d7713c364df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartManager: {fileID: 0}
   groundHeight: 0
   levelHeight: 0
   levelWidth: 0
-  platformPrefab: {fileID: 0}
   heightDiff: 0
+  platformPrefab: {fileID: 0}
+  obstaclePrefab: {fileID: 598166557933991564, guid: 565c1028f4eeff4408869d5b7dce1f5e, type: 3}
+  dandelionPrefab: {fileID: 6257112981563962411, guid: 2259182481f020d4886140db639f3c0d, type: 3}
+  pickaxePrefab: {fileID: 2666165896166075302, guid: 3cc6e6867a952b346a2a2d3ed7c83521, type: 3}
+  avgNumObstacles: 0
+  dandelionProb: 0
