@@ -9,11 +9,12 @@ public class PlayerController : MonoBehaviour
     public float verticalAcceleration;
 
     Rigidbody2D rb;
-
+    AudioSource jumpSound;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        jumpSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,8 +42,10 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        
         if (Input.GetKey(KeyCode.Space) && isGrounded && rb.velocity == new Vector2(0, 0))
         {
+            jumpSound.Play();
             rb.AddForce(new Vector2(0, verticalAcceleration), ForceMode2D.Impulse);
         }
     }

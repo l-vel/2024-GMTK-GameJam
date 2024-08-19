@@ -508,7 +508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: levelHeight
-      value: 60
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: groundHeight
@@ -520,7 +520,7 @@ PrefabInstance:
       objectReference: {fileID: 1390020752}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: dandelionProb
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: obstaclePrefab
