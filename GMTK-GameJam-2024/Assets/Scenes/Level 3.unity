@@ -500,15 +500,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: heightDiff
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: levelWidth
-      value: 14
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: levelHeight
-      value: 10
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: groundHeight
@@ -532,7 +532,7 @@ PrefabInstance:
       objectReference: {fileID: 3945111258921212632, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: avgNumObstacles
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: dandelionHeightDiff
