@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3236211272068840939}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1199, y: -1.1742, z: 0}
+  m_LocalPosition: {x: 0.16, y: -0.05, z: 0}
   m_LocalScale: {x: 0.24651381, y: 0.17728281, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -140,13 +140,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 5746708136437427805, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
+      propertyPath: m_Size.x
+      value: 7.022464
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746708136437427805, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0517932
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746708136437427805, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746708136437427805, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.16401148
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746708136437427805, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.04316108
+      objectReference: {fileID: 0}
     - target: {fileID: 5780961177683158438, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 5780961177683158438, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.17
+      value: -0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

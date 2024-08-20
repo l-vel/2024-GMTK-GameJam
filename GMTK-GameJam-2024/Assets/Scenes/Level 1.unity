@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.5887772, g: 0.9320997, b: 0.9528302, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -519,6 +519,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finishLevelPrefab: {fileID: 1328993487003738882, guid: 0889b10cf48d80f4b9acc0ee80567a78, type: 3}
   obstacleCreator: {fileID: 1261601006}
+--- !u!4 &279055957 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1585452528599028702, guid: c2d196eb59662a747b7daef39d922614, type: 3}
+  m_PrefabInstance: {fileID: 279055950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &358754454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -527,6 +532,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1322006385030554907, guid: 8657054420442f040be27edfab949ed3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1825876616436179865, guid: 8657054420442f040be27edfab949ed3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -574,6 +583,22 @@ PrefabInstance:
     - target: {fileID: 1973989430726003159, guid: 8657054420442f040be27edfab949ed3, type: 3}
       propertyPath: m_TagString
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281712785549404564, guid: 8657054420442f040be27edfab949ed3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 57.71552
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281712785549404564, guid: 8657054420442f040be27edfab949ed3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9669961
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281712785549404564, guid: 8657054420442f040be27edfab949ed3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.533
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281712785549404564, guid: 8657054420442f040be27edfab949ed3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8456
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -698,7 +723,7 @@ PrefabInstance:
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: platformPrefab
       value: 
-      objectReference: {fileID: 3945111258921212632, guid: 606760ced5c346040a577a1b882eddcc, type: 3}
+      objectReference: {fileID: 747374632121393970, guid: 31b18e2e9fc885f43b87ceee47859567, type: 3}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: avgNumObstacles
       value: 1
@@ -792,7 +817,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 279055957}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 10
