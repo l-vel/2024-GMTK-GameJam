@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finishLevelPrefab: {fileID: 1328993487003738882, guid: 0889b10cf48d80f4b9acc0ee80567a78, type: 3}
-  obstacleCreator: {fileID: 0}
+  obstacleCreator: {fileID: 1261601006}
 --- !u!1001 &358754454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -580,6 +580,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8657054420442f040be27edfab949ed3, type: 3}
+--- !u!114 &1261601006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
+  m_PrefabInstance: {fileID: 1439444055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9554ca227636c946957d7713c364df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1325800097
 PrefabInstance:
   m_ObjectHideFlags: 0
