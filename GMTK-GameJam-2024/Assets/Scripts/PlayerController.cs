@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Animator animator;
+    public HeartManager heartManager;
 
     public bool isGrounded = false;
     public float horizontalSpeed;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
         Jump();
 
         checkJumpBoost();
+        checkOffScreen();
     }
 
     void HorizontalMovement()
@@ -113,6 +115,12 @@ public class PlayerController : MonoBehaviour
                 jumpBoostTimePassed = 0;
                 jumpBoostDur = 0;
             }
+        }
+    }
+
+    void checkOffScreen() {
+        if (gameObject.transform.position.y < -15) {
+            heartManager.gameOver(gameObject);
         }
     }
 }

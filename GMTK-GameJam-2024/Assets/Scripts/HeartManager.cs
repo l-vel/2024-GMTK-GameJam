@@ -10,7 +10,7 @@ public class HeartManager : MonoBehaviour
     List<GameObject> hearts = new List<GameObject>();
     int numHeartsActive;
 
-    public Vector3 respawnPoint;
+    public Vector3 respawnPoint = new Vector3(0, 0, 0);
 
     const int MAX_NUM_HEARTS = 3;
 
@@ -41,7 +41,7 @@ public class HeartManager : MonoBehaviour
     }
 
     public void gameOver(GameObject goat) {
-        if (respawnPoint == null) {
+        if (respawnPoint == new Vector3(0, 0, 0)) {
             Destroy(goat);
             Instantiate(gameOverUIPrefab);
         }
