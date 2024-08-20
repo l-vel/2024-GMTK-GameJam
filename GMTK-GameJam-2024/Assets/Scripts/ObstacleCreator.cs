@@ -14,6 +14,8 @@ public class ObstacleCreator : MonoBehaviour
     public GameObject platformPrefab;
     public GameObject obstaclePrefab;
     public GameObject dandelionPrefab;
+    public GameObject trickPlatformPrefab;
+
     public GameObject pickaxePrefab;
     public GameObject finishLevelPrefab;
     public int avgNumObstacles;
@@ -26,43 +28,50 @@ public class ObstacleCreator : MonoBehaviour
         SpawnFinishPoint();
     }
 
-    void generatePlatforms() 
+    void generatePlatforms()
     {
         float currHeight = groundHeight + heightDiff;
-        float levelLeft = -levelWidth/2;
-        float levelRight = levelWidth/2;
+        float levelLeft = -levelWidth / 2;
+        float levelRight = levelWidth / 2;
 
-        int pickaxePlatform = (int)((levelHeight - groundHeight)/(heightDiff*2));
+        int pickaxePlatform = (int)((levelHeight - groundHeight) / (heightDiff * 2));
         int numPlatforms = 0;
 
-        while (currHeight < levelHeight) {
+        while (currHeight < levelHeight)
+        {
             float currX = Random.Range(levelLeft, levelRight);
             Vector3 pos = new Vector3(currX, currHeight, 0);
             Instantiate(platformPrefab, pos, Quaternion.identity);
 
-            if (numPlatforms > 0) {
-                makeObstacles(pos);
+            MakeTrickPlatforms(pos, currX, currHeight);
+
+            if (numPlatforms > 0)
+            {
+                MakeObstacles(pos);
             }
 
-            if (numPlatforms == pickaxePlatform) {
-                makePickaxe(pos);
+            if (numPlatforms == pickaxePlatform)
+            {
+                MakePickaxe(pos);
             }
-            else {
-                makeDandelion(pos);
+            else
+            {
+                MakeDandelion(pos);
             }
 
             currHeight += heightDiff;
             numPlatforms++;
         }
+
         //makes a final platform at the height "levelHeight"
         float finalX = Random.Range(levelLeft, levelRight);
-        Vector3 finalPos = new Vector3(finalX, levelHeight,0);
+        Vector3 finalPos = new Vector3(finalX, levelHeight, 0);
         Instantiate(platformPrefab, finalPos, Quaternion.identity);
     }
 
-    void makeObstacles(Vector3 platformPos) 
+    void MakeObstacles(Vector3 platformPos)
     {
-        int numObstacles = Random.Range(avgNumObstacles-2, avgNumObstacles+2);
+        int numObstacles = Random.Range(avgNumObstacles - 2, avgNumObstacles + 2);
 
         Vector2 platformSize = platformPrefab.GetComponent<BoxCollider2D>().size;
         float platformWidth = platformSize.x;
@@ -72,11 +81,12 @@ public class ObstacleCreator : MonoBehaviour
         float obstacleWidth = obstacleSize.x;
         float obstacleHeight = obstacleSize.y;
 
-        float obstacleY = platformPos.y - platformHeight/2 - obstacleHeight/2;
+        float obstacleY = platformPos.y - platformHeight / 2 - obstacleHeight / 2;
 
-        for (int i = 0; i < numObstacles; i++) {
-            float obstacleX = Random.Range(platformPos.x - platformWidth/2 + obstacleWidth/2,
-                                           platformPos.x + platformWidth/2 - obstacleWidth/2);
+        for (int i = 0; i < numObstacles; i++)
+        {
+            float obstacleX = Random.Range(platformPos.x - platformWidth / 2 + obstacleWidth / 2,
+                                           platformPos.x + platformWidth / 2 - obstacleWidth / 2);
             Vector3 obstaclePos = new Vector3(obstacleX, obstacleY, 0);
             GameObject obstacle = (GameObject)Instantiate(obstaclePrefab, obstaclePos, Quaternion.identity);
             FallingObstacle script = obstacle.GetComponent<FallingObstacle>();
@@ -84,33 +94,54 @@ public class ObstacleCreator : MonoBehaviour
         }
     }
 
-    void makePickaxe(Vector3 platformPos) {
+    void MakePickaxe(Vector3 platformPos)
+    {
         float platformHeight = platformPrefab.GetComponent<BoxCollider2D>().size.y;
         float pickaxeHeight = pickaxePrefab.GetComponent<BoxCollider2D>().size.y;
 
-        float pickaxeY = platformPos.y + platformHeight/2 + pickaxeHeight/2;
+        float pickaxeY = platformPos.y + platformHeight / 2 + pickaxeHeight / 2;
         Vector3 pickaxePos = new Vector3(platformPos.x, pickaxeY, 0);
         GameObject pickaxe = Instantiate(pickaxePrefab, pickaxePos, Quaternion.identity);
         SpawnPoint script = pickaxe.GetComponent<SpawnPoint>();
         script.heartManager = heartManager;
     }
 
-    void makeDandelion(Vector3 platformPos) {
+    void MakeDandelion(Vector3 platformPos)
+    {
         bool makeDandelion = Random.Range(0f, 1f) <= dandelionProb;
 
-        if (makeDandelion) {
+        if (makeDandelion)
+        {
             float platformHeight = platformPrefab.GetComponent<BoxCollider2D>().size.y;
             float dandelionHeight = dandelionPrefab.GetComponent<BoxCollider2D>().size.y;
 
-            float dandelionY = platformPos.y + platformHeight/2 + dandelionHeight/2;
+            float dandelionY = platformPos.y + platformHeight / 2 + dandelionHeight / 2;
             Vector3 dandelionPos = new Vector3(platformPos.x, dandelionY, 0);
             Instantiate(dandelionPrefab, dandelionPos, Quaternion.identity);
         }
     }
 
+    void MakeTrickPlatforms(Vector3 platformPos, float x, float y)
+    {
+        bool makeTrickPlatform = Random.Range(0, 2) == 0;
+
+        Vector2 platformSize = platformPrefab.GetComponent<BoxCollider2D>().size;
+        float platformWidth = platformSize.x;
+        float trickPlatformY = y;
+
+        // 50% chance it makes a trick platform beside an already created regular platform
+        if (makeTrickPlatform)
+        {
+            float trickPlatformX = platformPos.x + platformWidth + (platformWidth / 2);
+
+            Vector3 trickPlatformPos = new Vector3(trickPlatformX, trickPlatformY, 0);
+            Instantiate(trickPlatformPrefab, trickPlatformPos, Quaternion.identity);
+        }
+    }
+
     private void SpawnFinishPoint()
     {
-        Vector3 finishHeight = new Vector3(0,levelHeight + 2,0);
+        Vector3 finishHeight = new Vector3(0, levelHeight + 2, 0);
         Instantiate(finishLevelPrefab, finishHeight, Quaternion.identity);
     }
 

@@ -3,7 +3,12 @@ guid: f9554ca227636c946957d7713c364df0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - heartManager: {instanceID: 0}
+  - platformPrefab: {instanceID: 0}
+  - obstaclePrefab: {instanceID: 0}
+  - dandelionPrefab: {instanceID: 0}
+  - trickPlatformPrefab: {fileID: 151750507466353577, guid: d13d83077bf65cf4a88acef29e74048e, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
