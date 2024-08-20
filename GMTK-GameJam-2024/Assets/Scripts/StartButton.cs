@@ -20,4 +20,8 @@ public class StartButton : MonoBehaviour
     public void StartGame() {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void Replay() {
+        SceneManager.LoadScene("Scenes/CutScene0");
+    }
 }

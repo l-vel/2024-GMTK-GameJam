@@ -59,6 +59,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScene4P4.unity
     guid: 250ff59be05be6140837e1eab2f15c78
+  - enabled: 1
+    path: Assets/Scenes/ReplayScreen.unity
+    guid: 8b4f945370865df4bb7446b40f208336
   - enabled: 0
     path: Assets/Scenes/Test Scene.unity
     guid: c373dfd8b0948be46a851e1e431fee0e
