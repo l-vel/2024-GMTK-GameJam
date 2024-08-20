@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator animator;
+    public HeartManager heartManager;
+
     public bool isGrounded = false;
     public float horizontalSpeed;
     public float verticalAcceleration;
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
         Jump();
 
         checkJumpBoost();
+        checkOffScreen();
     }
 
     void HorizontalMovement()
@@ -41,10 +45,22 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             pos += Vector3.left * horizontalSpeed;
+            gameObject.transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+            if (isGrounded) {
+                animator.Play("Walk");
+            }
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             pos += Vector3.right * horizontalSpeed;
+            gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+            if (isGrounded) {
+                animator.Play("Walk");
+            }
+        }
+
+        if (isGrounded && (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))) {
+            animator.Play("Idle");
         }
 
         gameObject.transform.position = pos;
@@ -52,10 +68,10 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-
         if (Input.GetKey(KeyCode.Space) && isGrounded && rb.velocity == new Vector2(0, 0))
         {
             jumpSound.Play();
+            animator.Play("Jump");
             rb.AddForce(new Vector2(0, verticalAcceleration), ForceMode2D.Impulse);
         }
     }
@@ -64,7 +80,13 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            isGrounded = true;
+            if (rb.velocity == new Vector2(0, 0)) {
+                if (isGrounded == false) {
+                    animator.Play("Idle");
+                }
+
+                isGrounded = true;
+            } 
         }
     }
 
@@ -98,6 +120,12 @@ public class PlayerController : MonoBehaviour
                 jumpBoostTimePassed = 0;
                 jumpBoostDur = 0;
             }
+        }
+    }
+
+    void checkOffScreen() {
+        if (gameObject.transform.position.y < -15) {
+            heartManager.gameOver(gameObject);
         }
     }
 }

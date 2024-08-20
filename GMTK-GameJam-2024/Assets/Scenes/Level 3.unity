@@ -1206,6 +1206,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8955963377511758470, guid: c2d196eb59662a747b7daef39d922614, type: 3}
+      propertyPath: heartManager
+      value: 
+      objectReference: {fileID: 1390020752}
+    - target: {fileID: 8955963377511758470, guid: c2d196eb59662a747b7daef39d922614, type: 3}
+      propertyPath: horizontalSpeed
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955963377511758470, guid: c2d196eb59662a747b7daef39d922614, type: 3}
+      propertyPath: verticalAcceleration
+      value: 23.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
