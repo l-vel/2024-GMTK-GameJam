@@ -18,6 +18,6 @@ public class StartButton : MonoBehaviour
     }
 
     public void StartGame() {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

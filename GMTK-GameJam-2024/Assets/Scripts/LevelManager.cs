@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
-    public GameObject finishLevelPrefab;
-    public ObstacleCreator obstacleCreator;
-    private Vector3 levelHeight;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +31,8 @@ public class LevelManager : MonoBehaviour
 
     private void LoadScene()
     {
+        
          SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+         DontDestroyOnLoad(this.gameObject);
     }
 }
