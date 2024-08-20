@@ -14,6 +14,7 @@ public class ObstacleCreator : MonoBehaviour
     public GameObject platformPrefab;
     public GameObject obstaclePrefab;
     public GameObject dandelionPrefab;
+    public GameObject pickaxePrefab;
 
     public int avgNumObstacles;
     public float dandelionProb;
@@ -30,15 +31,25 @@ public class ObstacleCreator : MonoBehaviour
         float levelLeft = -levelWidth/2;
         float levelRight = levelWidth/2;
 
+        int pickaxePlatform = (int)((levelHeight - groundHeight)/(heightDiff*2));
+        int numPlatforms = 0;
+
         while (currHeight < levelHeight) {
             float currX = Random.Range(levelLeft, levelRight);
             Vector3 pos = new Vector3(currX, currHeight, 0);
             Instantiate(platformPrefab, pos, Quaternion.identity);
 
             makeObstacles(pos);
-            makeDandelion(pos);
+
+            if (numPlatforms == pickaxePlatform) {
+                makePickaxe(pos);
+            }
+            else {
+                makeDandelion(pos);
+            }
 
             currHeight += heightDiff;
+            numPlatforms++;
         }
         //makes a final platform at the height "levelHeight"
         float finalX = Random.Range(levelLeft, levelRight);
@@ -68,6 +79,17 @@ public class ObstacleCreator : MonoBehaviour
             FallingObstacle script = obstacle.GetComponent<FallingObstacle>();
             script.heartManager = heartManager;
         }
+    }
+
+    void makePickaxe(Vector3 platformPos) {
+        float platformHeight = platformPrefab.GetComponent<BoxCollider2D>().size.y;
+        float pickaxeHeight = pickaxePrefab.GetComponent<BoxCollider2D>().size.y;
+
+        float pickaxeY = platformPos.y + platformHeight/2 + pickaxeHeight/2;
+        Vector3 pickaxePos = new Vector3(platformPos.x, pickaxeY, 0);
+        GameObject pickaxe = Instantiate(pickaxePrefab, pickaxePos, Quaternion.identity);
+        SpawnPoint script = pickaxe.GetComponent<SpawnPoint>();
+        script.heartManager = heartManager;
     }
 
     void makeDandelion(Vector3 platformPos) {

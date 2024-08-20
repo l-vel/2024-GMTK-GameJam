@@ -403,6 +403,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8657054420442f040be27edfab949ed3, type: 3}
+--- !u!1 &729240210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7291283623937931408, guid: c2d196eb59662a747b7daef39d922614, type: 3}
+  m_PrefabInstance: {fileID: 1979436485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &903088262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1585452528599028702, guid: c2d196eb59662a747b7daef39d922614, type: 3}
@@ -434,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeartUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3909897465804931755, guid: 6c7b603eeed58f248a186738d7c0d666, type: 3}
+      propertyPath: goat
+      value: 
+      objectReference: {fileID: 729240210}
     - target: {fileID: 6340901380573228619, guid: 6c7b603eeed58f248a186738d7c0d666, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
