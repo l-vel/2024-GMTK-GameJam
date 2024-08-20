@@ -15,7 +15,7 @@ public class ObstacleCreator : MonoBehaviour
     public GameObject obstaclePrefab;
     public GameObject dandelionPrefab;
     public GameObject pickaxePrefab;
-
+    public GameObject finishLevelPrefab;
     public int avgNumObstacles;
     public float dandelionProb;
 
@@ -23,6 +23,7 @@ public class ObstacleCreator : MonoBehaviour
     void Start()
     {
         generatePlatforms();
+        SpawnFinishPoint();
     }
 
     void generatePlatforms() 
@@ -105,6 +106,12 @@ public class ObstacleCreator : MonoBehaviour
             Vector3 dandelionPos = new Vector3(platformPos.x, dandelionY, 0);
             Instantiate(dandelionPrefab, dandelionPos, Quaternion.identity);
         }
+    }
+
+    private void SpawnFinishPoint()
+    {
+        Vector3 finishHeight = new Vector3(0,levelHeight + 2,0);
+        Instantiate(finishLevelPrefab, finishHeight, Quaternion.identity);
     }
 
 }

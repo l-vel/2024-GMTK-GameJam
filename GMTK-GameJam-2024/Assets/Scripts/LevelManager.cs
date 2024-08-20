@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnFinishPoint();
+        
     }
 
     // Update is called once per frame
@@ -20,11 +20,7 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    private void SpawnFinishPoint()
-    {
-        levelHeight = new Vector3(0,obstacleCreator.levelHeight + 2,0);
-        Instantiate(finishLevelPrefab, levelHeight, Quaternion.identity);
-    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Finish" )
