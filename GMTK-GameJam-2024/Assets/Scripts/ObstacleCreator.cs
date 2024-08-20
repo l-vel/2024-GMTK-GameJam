@@ -39,7 +39,9 @@ public class ObstacleCreator : MonoBehaviour
             Vector3 pos = new Vector3(currX, currHeight, 0);
             Instantiate(platformPrefab, pos, Quaternion.identity);
 
-            makeObstacles(pos);
+            if (numPlatforms > 0) {
+                makeObstacles(pos);
+            }
 
             if (numPlatforms == pickaxePlatform) {
                 makePickaxe(pos);
