@@ -12,14 +12,47 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Screen.unity
     guid: 5f52065cbfe5e45419cdb1b63d6e07df
   - enabled: 1
+    path: Assets/Scenes/CutScene0.unity
+    guid: 972d83a12b61e504887ff979a74fd033
+  - enabled: 1
+    path: Assets/Scenes/CutScene1.unity
+    guid: c1e33294ab4594844b223a602e71d470
+  - enabled: 1
+    path: Assets/Scenes/CutScene1Part2.unity
+    guid: 93e4f91026fe4b84d9e651bca39cf300
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 07cd33010d9f3d348b95c1d04b99d7d5
+  - enabled: 1
+    path: Assets/Scenes/CutScene2P1.unity
+    guid: 1cd2bf5dbd6b251449b6acf77e0c11bb
+  - enabled: 1
+    path: Assets/Scenes/CutScene2Part2.unity
+    guid: 2bd1bde3c49352547b10f42096653026
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: 8c2b9be7d30a8a6458d3d086956fee95
   - enabled: 1
+    path: Assets/Scenes/CutScene3Part1.unity
+    guid: 09e8ab297a3520f44b519e0c78ccd330
+  - enabled: 1
+    path: Assets/Scenes/CutScene3Part2.unity
+    guid: 67b8812df8307c44695e5ac62789f2ca
+  - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 4d3ce2ab942e182458a9f89311020673
+  - enabled: 1
+    path: Assets/Scenes/CutScene4P1.unity
+    guid: ccba67c578212d34abe79bd1a5043452
+  - enabled: 1
+    path: Assets/Scenes/CutScene4P2.unity
+    guid: 5c86cb673de0e5c45b09fc5ee983a985
+  - enabled: 1
+    path: Assets/Scenes/CutScene4P3.unity
+    guid: 1b827bd8dd3089e4d8560396250bf793
+  - enabled: 1
+    path: Assets/Scenes/CutScene4P4.unity
+    guid: 250ff59be05be6140837e1eab2f15c78
   - enabled: 0
     path: Assets/Scenes/Test Scene.unity
     guid: c373dfd8b0948be46a851e1e431fee0e

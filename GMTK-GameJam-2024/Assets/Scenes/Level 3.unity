@@ -525,8 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe72a48e5c691c4b9575852d0672b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finishLevelPrefab: {fileID: 1328993487003738882, guid: 0889b10cf48d80f4b9acc0ee80567a78, type: 3}
-  obstacleCreator: {fileID: 2053594246}
 --- !u!82 &903088270
 AudioSource:
   m_ObjectHideFlags: 0
@@ -948,6 +946,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
+      propertyPath: finishLevelPrefab
+      value: 
+      objectReference: {fileID: 1328993487003738882, guid: 0889b10cf48d80f4b9acc0ee80567a78, type: 3}
+    - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: dandelionHeightDiff
       value: 1
       objectReference: {fileID: 0}
@@ -1139,17 +1141,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 903088270}
   m_SourcePrefab: {fileID: 100100000, guid: c2d196eb59662a747b7daef39d922614, type: 3}
---- !u!114 &2053594246 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
-  m_PrefabInstance: {fileID: 1439444055}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9554ca227636c946957d7713c364df0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

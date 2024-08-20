@@ -11,12 +11,14 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
+    private LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
         startDialogue();
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -58,7 +60,9 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(TypeLine());
         }
         else{
+            levelManager.LoadScene();
             gameObject.SetActive(false);
+
         }
     }
 }
