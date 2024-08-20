@@ -10,6 +10,8 @@ public class HeartManager : MonoBehaviour
     List<GameObject> hearts = new List<GameObject>();
     int numHeartsActive;
 
+    public Vector3 respawnPoint;
+
     const int MAX_NUM_HEARTS = 3;
 
     // Start is called before the first frame update
@@ -28,8 +30,7 @@ public class HeartManager : MonoBehaviour
         }
 
         if (numHeartsActive == 0) {
-            Destroy(goat.gameObject);
-            Invoke("gameOver", 0.75f);
+            gameOver(goat.gameObject);
         }
     }
 
@@ -39,7 +40,14 @@ public class HeartManager : MonoBehaviour
         }
     }
 
-    public void gameOver() {
-        Instantiate(gameOverUIPrefab);
+    public void gameOver(GameObject goat) {
+        if (respawnPoint == null) {
+            Destroy(goat);
+            Instantiate(gameOverUIPrefab);
+        }
+        else {
+            goat.transform.position = respawnPoint;
+            addHeart();
+        }
     }
 }
