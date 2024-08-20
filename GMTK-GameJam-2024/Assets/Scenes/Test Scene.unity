@@ -350,6 +350,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1076004170025850684, guid: 8657054420442f040be27edfab949ed3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1825876616436179865, guid: 8657054420442f040be27edfab949ed3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -592,9 +596,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
+      propertyPath: finishLevelPrefab
+      value: 
+      objectReference: {fileID: 1328993487003738882, guid: 0889b10cf48d80f4b9acc0ee80567a78, type: 3}
+    - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: dandelionHeightDiff
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
+      propertyPath: trickPlatformPrefab
+      value: 
+      objectReference: {fileID: 151750507466353577, guid: d13d83077bf65cf4a88acef29e74048e, type: 3}
     - target: {fileID: 5898542196880666628, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
