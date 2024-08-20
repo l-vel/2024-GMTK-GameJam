@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Screen.unity
     guid: 5f52065cbfe5e45419cdb1b63d6e07df
   - enabled: 1
+    path: Assets/Scenes/WICSIntro.unity
+    guid: 5d739ea43eba87d4c87728b2deb75163
+  - enabled: 1
+    path: Assets/Scenes/StoryIntroDialogue.unity
+    guid: 6010ac11c8ff35c4aaa85d3cdfd1a104
+  - enabled: 1
     path: Assets/Scenes/CutScene0.unity
     guid: 972d83a12b61e504887ff979a74fd033
   - enabled: 1
