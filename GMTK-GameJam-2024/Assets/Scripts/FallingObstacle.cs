@@ -41,17 +41,11 @@ public class FallingObstacle : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // if object touches player, removes player and restarts the game level after a couple seconds
+        // if object touches player, removes player life
         if (collision.gameObject.CompareTag("Player"))
         {
             heartManager.removeHeart(collision);
             Destroy(gameObject);
         }
-
-        // otherwise, the obstacle remains on the ground
-        // else
-        // {
-        //     rb.gravityScale = 0;
-        // }
     }
 }
