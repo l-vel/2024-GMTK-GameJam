@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7415529920761836709}
   - component: {fileID: 8705867485022278043}
+  - component: {fileID: 5235162504423582578}
   m_Layer: 0
   m_Name: Dandelion
   m_TagString: Untagged
@@ -161,3 +162,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.6957727}
   m_EdgeRadius: 0
+--- !u!114 &5235162504423582578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6257112981563962411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d5680966cd3d6468168784241fbb3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 2
+  jumpScale: 1.5

@@ -47,5 +47,15 @@ public class FallingObstacle : MonoBehaviour
             heartManager.removeHeart(collision);
             Destroy(gameObject);
         }
+
+        // otherwise, the obstacle hit the ground
+        else if (isFalling)
+        {
+            Invoke("destroySelf", 3);
+        }
+    }
+
+    void destroySelf() {
+        Destroy(gameObject);
     }
 }

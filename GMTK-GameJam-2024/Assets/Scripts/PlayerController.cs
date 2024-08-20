@@ -8,12 +8,21 @@ public class PlayerController : MonoBehaviour
     public float horizontalSpeed;
     public float verticalAcceleration;
 
-    Rigidbody2D rb;
+    float jumpBoostTimePassed = 0;
+    float regularJump;
+    float jumpBoostDur = 0;
 
+    Rigidbody2D rb;
+    AudioSource jumpSound;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        regularJump = verticalAcceleration;
+
+        jumpSound = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -21,6 +30,8 @@ public class PlayerController : MonoBehaviour
     {
         HorizontalMovement();
         Jump();
+
+        checkJumpBoost();
     }
 
     void HorizontalMovement()
@@ -41,8 +52,10 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        
         if (Input.GetKey(KeyCode.Space) && isGrounded && rb.velocity == new Vector2(0, 0))
         {
+            jumpSound.Play();
             rb.AddForce(new Vector2(0, verticalAcceleration), ForceMode2D.Impulse);
         }
     }
@@ -60,6 +73,26 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = false;
+        }
+    }
+
+    public void jumpBoost(float jumpScale, float duration) {
+        jumpBoostDur += duration;
+
+        if (jumpBoostTimePassed == 0) {
+            verticalAcceleration *= jumpScale;
+        }
+    }
+
+    void checkJumpBoost() {
+        if (jumpBoostDur != 0) {        // if there is a jump boost active
+            jumpBoostTimePassed += Time.deltaTime;
+
+            if (jumpBoostTimePassed >= jumpBoostDur) {
+                verticalAcceleration = regularJump;
+                jumpBoostTimePassed = 0;
+                jumpBoostDur = 0;
+            }
         }
     }
 }
