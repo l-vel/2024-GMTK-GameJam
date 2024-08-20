@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d5680966cd3d6468168784241fbb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
-  jumpScale: 3
+  duration: 2
+  jumpScale: 2
