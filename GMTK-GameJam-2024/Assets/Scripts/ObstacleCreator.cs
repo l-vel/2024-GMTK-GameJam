@@ -39,9 +39,7 @@ public class ObstacleCreator : MonoBehaviour
             Vector3 pos = new Vector3(currX, currHeight, 0);
             Instantiate(platformPrefab, pos, Quaternion.identity);
 
-            if (numPlatforms > 0) {
-                makeObstacles(pos);
-            }
+            makeObstacles(pos);
 
             if (numPlatforms == pickaxePlatform) {
                 makePickaxe(pos);
@@ -53,10 +51,6 @@ public class ObstacleCreator : MonoBehaviour
             currHeight += heightDiff;
             numPlatforms++;
         }
-        //makes a final platform at the height "levelHeight"
-        float finalX = Random.Range(levelLeft, levelRight);
-        Vector3 finalPos = new Vector3(finalX, levelHeight,0);
-        Instantiate(platformPrefab, finalPos, Quaternion.identity);
     }
 
     void makeObstacles(Vector3 platformPos) 
