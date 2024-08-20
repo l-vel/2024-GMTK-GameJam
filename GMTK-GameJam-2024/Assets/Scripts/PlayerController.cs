@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        
+
         if (Input.GetKey(KeyCode.Space) && isGrounded && rb.velocity == new Vector2(0, 0))
         {
             jumpSound.Play();
@@ -76,19 +76,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void jumpBoost(float jumpScale, float duration) {
+    public void jumpBoost(float jumpScale, float duration)
+    {
         jumpBoostDur += duration;
 
-        if (jumpBoostTimePassed == 0) {
+        if (jumpBoostTimePassed == 0)
+        {
             verticalAcceleration *= jumpScale;
         }
     }
 
-    void checkJumpBoost() {
-        if (jumpBoostDur != 0) {        // if there is a jump boost active
+    void checkJumpBoost()
+    {
+        if (jumpBoostDur != 0)
+        {        // if there is a jump boost active
             jumpBoostTimePassed += Time.deltaTime;
 
-            if (jumpBoostTimePassed >= jumpBoostDur) {
+            if (jumpBoostTimePassed >= jumpBoostDur)
+            {
                 verticalAcceleration = regularJump;
                 jumpBoostTimePassed = 0;
                 jumpBoostDur = 0;
