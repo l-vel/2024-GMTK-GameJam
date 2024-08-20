@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && isGrounded && rb.velocity == new Vector2(0, 0))
         {
-            // jumpSound.Play();
+            jumpSound.Play();
             rb.AddForce(new Vector2(0, verticalAcceleration), ForceMode2D.Impulse);
         }
     }

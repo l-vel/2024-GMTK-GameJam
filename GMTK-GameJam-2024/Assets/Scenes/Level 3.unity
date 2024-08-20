@@ -953,6 +953,10 @@ PrefabInstance:
       propertyPath: dandelionHeightDiff
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1991253906465034106, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
+      propertyPath: trickPlatformPrefab
+      value: 
+      objectReference: {fileID: 5005350865556272714, guid: 2293597d8f8571643a4bdf4b614e9e66, type: 3}
     - target: {fileID: 5898542196880666628, guid: 6c665bd8f709ccb4da906eab85406719, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
