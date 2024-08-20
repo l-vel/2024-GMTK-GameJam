@@ -51,6 +51,10 @@ public class ObstacleCreator : MonoBehaviour
             currHeight += heightDiff;
             numPlatforms++;
         }
+        //makes a final platform at the height "levelHeight"
+        float finalX = Random.Range(levelLeft, levelRight);
+        Vector3 finalPos = new Vector3(finalX, levelHeight,0);
+        Instantiate(platformPrefab, finalPos, Quaternion.identity);
     }
 
     void makeObstacles(Vector3 platformPos) 
