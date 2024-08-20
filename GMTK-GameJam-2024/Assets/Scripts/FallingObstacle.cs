@@ -48,14 +48,10 @@ public class FallingObstacle : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // otherwise, the obstacle hit the ground
-        else if (isFalling)
-        {
-            Invoke("destroySelf", 3);
-        }
-    }
-
-    void destroySelf() {
-        Destroy(gameObject);
+        // otherwise, the obstacle remains on the ground
+        // else
+        // {
+        //     rb.gravityScale = 0;
+        // }
     }
 }
